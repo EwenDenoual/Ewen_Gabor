@@ -1,5 +1,5 @@
 // Array to store tasks in memory
-let tasks = [];
+const tasks = [];
 
 // Function to check API health
 async function checkApiHealth() {
@@ -11,7 +11,7 @@ async function checkApiHealth() {
         } else {
             throw new Error();
         }
-    } catch (error) {
+    } catch (_error) {
         document.getElementById('api-status').textContent = 'Non connecté à l\'API';
         document.getElementById('api-status').style.color = 'red';
     }
@@ -55,4 +55,4 @@ document.getElementById('add-task-form').addEventListener('submit', function(eve
 });
 
 // Check API on load
-window.onload = checkApiHealth;
+globalThis.onload = checkApiHealth;
